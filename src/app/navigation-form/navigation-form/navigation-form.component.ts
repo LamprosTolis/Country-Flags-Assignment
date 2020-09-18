@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-nav-form',
-  templateUrl: './nav-form.component.html',
-  styleUrls: ['./nav-form.component.scss']
+  selector: 'app-navigation-form',
+  templateUrl: './navigation-form.component.html',
+  styleUrls: ['./navigation-form.component.scss']
 })
-export class NavFormComponent implements OnInit {
+export class NavigationFormComponent implements OnInit {
   form: FormGroup;
   programmingLanguages = ['TS', 'JS', 'C#'];
 
