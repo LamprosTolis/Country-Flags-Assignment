@@ -1,3 +1,4 @@
+import { HeaderComponent } from './header/header.component';
 import { CountriesModule } from './countries/countries/countries.module';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

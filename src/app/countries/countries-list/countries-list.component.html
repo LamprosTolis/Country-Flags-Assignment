@@ -1,10 +1,16 @@
+<div class="HeaderDiv">
+  <button class="btn-headerButton">European Countries</button>
+  <button class="btn-headerButton">Asian Countries</button>
+  <button class="btn-headerButton">American Countries</button>
+</div>
+
 <div class="row">
-    <div *ngFor="let country of countries" class="card" style="width: 18rem;">
+    <div *ngFor="let country of countries" class="card" style="width: 25rem;">
         <img src="{{country.flag}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{country.capital}}</h5>
           <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <a href="#" class="btn btn-primary">Info</a>
         </div>
       </div>
 </div>

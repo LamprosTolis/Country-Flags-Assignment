@@ -13,4 +13,8 @@ export class CountriesService {
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>('https://restcountries.eu/rest/v2/');
   }
+
+  getEuropeanCountries(): Observable<Country[]>{
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/europe');
+  }
 }

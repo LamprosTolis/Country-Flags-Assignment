@@ -38,7 +38,7 @@ export class NavigationFormComponent implements OnInit {
       }
       jsVersionFormControl.updateValueAndValidity();
   });
- }  
+ }
  onSubmit() {
   console.log(this.form.value);
  }
