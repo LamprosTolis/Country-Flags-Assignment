@@ -1,26 +1,36 @@
+import { HeaderComponent } from './header/header.component';
+import { CountriesModule } from './countries/countries/countries.module';
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { ProductsModule } from './products/products.module';
+
 import { CountriesListComponent } from './countries/countries-list/countries-list.component';
+import { NavigationFormComponent } from './navigation-form/navigation-form/navigation-form.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavigationFormModule } from './navigation-form/navigation-form.module';
+
+
+const appRoutes: Routes = [
+  {path: 'countries-list', component: CountriesListComponent},
+  {path: 'navigation-form', component: NavigationFormComponent},
+];
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainComponent,
-    CountriesListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    ProductsModule,
-    HttpClientModule
+    CountriesModule,
+    HttpClientModule,
+    NavigationFormModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
