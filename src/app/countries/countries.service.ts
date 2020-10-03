@@ -17,4 +17,20 @@ export class CountriesService {
   getEuropeanCountries(): Observable<Country[]>{
     return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/europe');
   }
+
+  getAsianCountries(): Observable<Country[]>{
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Asia');
+  }
+
+  getAmericanCountries(): Observable<Country[]>{
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Americas');
+  }
+
+  getOceaniaCountries(): Observable<Country[]>{
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Oceania');
+  }
+
+  getAfricanCountries(): Observable<Country[]>{
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Africa');
+  }
 }
