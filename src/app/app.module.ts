@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CountriesModule } from './countries/countries/countries.module';
@@ -21,6 +22,7 @@ import { AmericanCountriesComponent } from './countries/american-countries/ameri
 import { OceanianCountriesComponent } from './countries/oceanian-countries/oceanian-countries.component';
 
 const appRoutes: Routes = [
+  {path: 'home', component: HomeComponent},
   {path: 'countries-list', component: CountriesListComponent},
   {path: 'navigation-form', component: NavigationFormComponent},
   {path: 'european-countries', component: EuropeanCountriesComponent},
