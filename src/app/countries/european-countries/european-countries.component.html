@@ -4,7 +4,29 @@
         <div class="card-body">
           <h5 class="card-title">{{country.capital}}</h5>
           <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <a href="#" class="btn btn-primary">Info</a>
-        </div>
+          <button mat-button (click)="onGetCountryInfo(country,$event,open(content))" data-toggle="modal" class="btn btn-primary">Info</button>        </div>
       </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Country Information</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="container">
+          <label>{{selectedCountry}}</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">OK</button>
+
+</ng-template>
+  
+  <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

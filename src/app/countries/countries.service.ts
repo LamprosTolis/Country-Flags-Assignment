@@ -8,6 +8,8 @@ import { Country } from './countries/country';
 })
 export class CountriesService {
 
+  country: Country;
+
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<Country[]> {
@@ -32,5 +34,9 @@ export class CountriesService {
 
   getAfricanCountries(): Observable<Country[]>{
     return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Africa');
+  }
+
+  getCountryInfo(country: string){
+    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/name/' + country);
   }
 }

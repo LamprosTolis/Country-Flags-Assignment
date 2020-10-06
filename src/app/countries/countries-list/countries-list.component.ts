@@ -13,13 +13,11 @@ export class CountriesListComponent implements OnInit {
   europeancountries: Country[];
 
 
-
   constructor(private countryService: CountriesService) { }
 
   ngOnInit(): void {
     this.countryService.getCountries().subscribe((data) => {
     this.countries = data;
-
     });
   }
 }
