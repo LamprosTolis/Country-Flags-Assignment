@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class AsianCountriesComponent implements OnInit {
 
   asiancountries: Country[];
-
+  selectedCountry: any;
+  
   constructor(private countryService: CountriesService) { }
 
   ngOnInit(): void {
@@ -18,4 +19,13 @@ export class AsianCountriesComponent implements OnInit {
     this.asiancountries = data;
   });
  }
+
+ onGetCountryInfo(country: string) {
+  alert('Selected Country' + JSON.stringify(country));
+  this.selectedCountry = (this.countryService.getCountryInfo(country));
+
+  // alert('Selected Country: ' + JSON.stringify(this.selectedCountry));
+  return this.selectedCountry;
+}
+
 }

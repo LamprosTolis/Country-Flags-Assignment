@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AfricanCountriesComponent implements OnInit {
 
   africancountries: Country[];
+  selectedCountry: any;
 
   constructor(private countryService: CountriesService) { }
 
@@ -18,4 +19,13 @@ export class AfricanCountriesComponent implements OnInit {
       this.africancountries = data;
   });
   }
+
+  onGetCountryInfo(country: string) {
+    alert('Selected Country' + JSON.stringify(country));
+    this.selectedCountry = (this.countryService.getCountryInfo(country));
+  
+    // alert('Selected Country: ' + JSON.stringify(this.selectedCountry));
+    return this.selectedCountry;
+  }
+
 }

@@ -1,9 +1,12 @@
 .footer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(53, 34, 158);
+    background-color: #1976d2;
     color: white;
     text-align: center;
     padding: 10px 10px;

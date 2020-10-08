@@ -3,8 +3,12 @@
         <img src="{{country.flag}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{country.capital}}</h5>
-          <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <a class="btn btn-primary">Info</a>
+          <p class="card-text">{{country.name}}</p>
+          <button
+          mat-button
+          (click)="onGetCountryInfo(country, $event)"
+          data-toggle="modal"
+          class="btn btn-lg btn-outline-primary">Info</button>
         </div>
       </div>
 </div>

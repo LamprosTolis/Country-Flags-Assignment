@@ -11,6 +11,7 @@ export class CountriesListComponent implements OnInit {
 
   countries: Country[];
   europeancountries: Country[];
+  selectedCountry: any;
 
 
   constructor(private countryService: CountriesService) { }
@@ -19,5 +20,13 @@ export class CountriesListComponent implements OnInit {
     this.countryService.getCountries().subscribe((data) => {
     this.countries = data;
     });
+  }
+
+  onGetCountryInfo(country: string) {
+    alert('Selected Country' + JSON.stringify(country));
+    this.selectedCountry = (this.countryService.getCountryInfo(country));
+
+    // alert('Selected Country: ' + JSON.stringify(this.selectedCountry));
+    return this.selectedCountry;
   }
 }

@@ -1,17 +1,34 @@
 <div class="row">
-    <div *ngFor="let country of europeancountries" class="card" style="width: 25rem;">
-        <img src="{{country.flag}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{country.capital}}</h5>
-          <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <button mat-button (click)="onGetCountryInfo(country,$event,open(content))" data-toggle="modal" class="btn btn-primary">Info</button>        </div>
-      </div>
+  <div
+    *ngFor="let country of europeancountries"
+    class="card"
+    style="width: 25rem"
+  >
+    <img src="{{ country.flag }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ country.capital }}</h5>
+      <p class="card-text">{{ country.name }}</p>
+      <button
+        mat-button
+        (click)="onGetCountryInfo(country, $event)"
+        data-toggle="modal"
+        class="btn btn-lg btn-outline-primary"
+      >
+        Info
+      </button>
+    </div>
+  </div>
 </div>
 
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Country Information</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -19,14 +36,19 @@
     <form>
       <div class="form-group">
         <div class="container">
-          <label>{{selectedCountry}}</label>
+          <label>{{ selectedCountry }}</label>
         </div>
       </div>
     </form>
   </div>
 
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">OK</button>
-
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="modal.close('Save click')"
+  >
+    OK
+  </button>
 </ng-template>
-  
-  <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

@@ -10,18 +10,15 @@ import { AppComponent } from './app.component';
 
 import { CountriesListComponent } from './countries/countries-list/countries-list.component';
 import { NavigationFormComponent } from './navigation-form/navigation-form/navigation-form.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavigationFormModule } from './navigation-form/navigation-form.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
 import { EuropeanCountriesComponent } from './countries/european-countries/european-countries.component';
 import { AsianCountriesComponent } from './countries/asian-countries/asian-countries.component';
 import { AfricanCountriesComponent } from './countries/african-countries/african-countries.component';
 import { AmericanCountriesComponent } from './countries/american-countries/american-countries.component';
 import { OceanianCountriesComponent } from './countries/oceanian-countries/oceanian-countries.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalPopupComponent } from './modal-popup/modal-popup.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}, // To-Do look more into this
@@ -39,7 +36,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, FooterComponent, ModalPopupComponent,
+    AppComponent, HeaderComponent, FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,8 +46,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

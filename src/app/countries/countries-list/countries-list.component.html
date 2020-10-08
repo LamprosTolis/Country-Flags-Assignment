@@ -4,7 +4,7 @@
         <div class="card-body">
           <h5 class="card-title">{{country.capital}}</h5>
           <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <a href="#" class="btn btn-primary">Info</a>
+          <button class="btn btn-lg btn-outline-primary" (click)="onGetCountryInfo(country, $event)">Info</button>
         </div>
       </div>
 </div>
