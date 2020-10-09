@@ -6,7 +6,7 @@ export interface Country{
     timezones: string;
     borders: string;
     nativeName: string;
-    languages: string[];
+    languages: string[][];
     name: string;
     flag: string;
     capital: string;

@@ -27,6 +27,4 @@ export class EuropeanCountriesComponent implements OnInit {
     // alert('Selected Country: ' + JSON.stringify(this.selectedCountry));
     return this.selectedCountry;
   }
-
-  onOpenModal() {}
 }

@@ -4,7 +4,34 @@
         <div class="card-body">
           <h5 class="card-title">{{country.capital}}</h5>
           <p class="card-text">{{country.name}} - {{ country.region}}</p>
-          <button class="btn btn-lg btn-outline-primary" (click)="onGetCountryInfo(country, $event)">Info</button>
+          <button class="btn btn-lg btn-outline-primary" (click)="openLg(content)">Info</button>
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Country information</h4>
+              <button type="btn btn-secondary" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="row">
+                <img src="{{country.flag}}" class="center">
+                <div class="col-lg-6">
+                  <label><strong> Name : </strong> {{country.name}} </label>
+                  <label><strong> Country Region : </strong>{{country.region}} </label>
+                  <label><strong> Country Domain Name : </strong>{{country.topLevelDomain}} </label>
+                  <label *ngIf=country.subregion><strong>Country Sub Region : </strong>{{country.subregion}} </label>
+                <label *ngIf=country.capital><strong>Country Capital : </strong>{{country.capital}} </label>
+                <label><strong> Country Population : </strong>{{country.population | number}} people </label>
+                <label><strong> Country Timezones : </strong>{{country.timezones}} </label>
+                <label><strong> Country Languages : </strong>{{country.languages}} </label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Close click')">Close</button>
+            </div>
+          </ng-template>
         </div>
       </div>
 </div>
