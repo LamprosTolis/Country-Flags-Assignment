@@ -1,3 +1,5 @@
+import { Language } from './Language';
+
 export interface Country{
     topLevelDomain: string;
     region: string;
@@ -6,7 +8,7 @@ export interface Country{
     timezones: string;
     borders: string;
     nativeName: string;
-    languages: string[][];
+    languages: Language[];
     name: string;
     flag: string;
     capital: string;
