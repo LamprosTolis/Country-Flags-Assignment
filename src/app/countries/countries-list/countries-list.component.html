@@ -20,15 +20,17 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="col-md-8">
-                  <label><strong> Name : </strong>  {{country.name}} </label>
-                  <label><strong> Country Region : </strong>{{country.region}} </label>
-                  <label><strong> Country Domain Name : </strong>{{country.topLevelDomain}} </label>
-                  <label *ngIf=country.subregion><strong>Country Sub Region : </strong>{{country.subregion}} </label>
-                <label *ngIf=country.capital><strong>Country Capital : </strong>{{country.capital}} </label>
-                <label><strong> Country Population : </strong>{{country.population | number}} people </label>
-                <label><strong> Country Timezones : </strong>{{country.timezones}} </label>
-                <label><strong> Country Languages : </strong></label>
-                <label style="white-space:pre;" *ngFor="let language of country.languages">{{language.name}}</label>
+                  <label class="row"><strong> Name : </strong>  {{country.name}} </label>
+                  <label class="row"><strong> Native Name : </strong>{{country.nativeName}} </label>
+                  <label class="row"><strong> Country Domain Name : </strong>{{country.topLevelDomain}} </label>
+                  <label class="row"><strong> Country Region : </strong>{{country.region}} </label>
+                  <label class="row" *ngIf=country.subregion><strong>Country Sub Region : </strong>{{country.subregion}} </label>
+                <label class="row" *ngIf=country.capital><strong>Country Capital : </strong>{{country.capital}} </label>
+                <label class="row"><strong> Country Population : </strong>{{country.population | number}} people </label>
+                <label class="row"><strong> Country Timezones : </strong>{{country.timezones}} </label>
+                <label class="row"><strong> Country Borders : </strong>{{country.borders}} </label>
+                <label class="row"><strong> Country Languages : </strong></label>
+                <label style="white-space:pre;" *ngFor="let language of country.languages">{{ ' ' + language.name + ' '}}</label>
                 </div>
               </div>
               </div>
