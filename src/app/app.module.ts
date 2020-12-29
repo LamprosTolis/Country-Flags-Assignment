@@ -43,7 +43,7 @@ const appRoutes: Routes = [
     CountriesModule,
     HttpClientModule,
     NavigationFormModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
