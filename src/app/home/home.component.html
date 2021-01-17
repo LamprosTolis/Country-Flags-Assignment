@@ -1,4 +1,37 @@
-<div  class="card align-items-center">
+
+
+<div  class="card align-items-center container portrait">
 <h4 class="header">Flags of the World</h4>
+<ngb-carousel #carousel *ngIf="images" interval=0 wrap="true" >
+    <ng-template ngbSlide id="id1">
+      <div  class="picsum-img-wrapper" [@simpleFadeAnimation]="carousel &&carousel.activeId=='id1'">
+        <img [src]="images[0]" width="100%" alt="Random first slide">
+      <div class="carousel-caption" >
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="id2">
+      <div class="picsum-img-wrapper" [@simpleFadeAnimation]="carousel &&carousel.activeId=='id2'">
+        <img [src]="images[1]" width="100%" alt="Random second slide">
+      <div class="carousel-caption" >
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="id3">
+      <div class="picsum-img-wrapper" [@simpleFadeAnimation]="carousel &&carousel.activeId=='id3'">
+        <img [src]="images[2]" width="100%" alt="Random third slide">
+      <div class="carousel-caption" >
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+<!-- <img src="assets/images/world-map.png" class="center"> -->
 <h5 class="header font-italic">Discover all the countries around the world!</h5>
 </div>
+
