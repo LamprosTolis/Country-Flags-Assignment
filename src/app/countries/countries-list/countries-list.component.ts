@@ -1,5 +1,5 @@
 import { CountriesService } from './../countries.service';
-import { Country } from './../Countries/country';
+import { Country } from './../countries/country';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 

@@ -13,27 +13,27 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/');
+    return this.http.get<Country[]>('https://restcountries.com/v2/all');
   }
 
   getEuropeanCountries(): Observable<Country[]>{
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/europe');
+    return this.http.get<Country[]>('https://restcountries.com/v2/region/europe');
   }
 
   getAsianCountries(): Observable<Country[]>{
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Asia');
+    return this.http.get<Country[]>('https://restcountries.com/v2/region/asia');
   }
 
   getAmericanCountries(): Observable<Country[]>{
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Americas');
+    return this.http.get<Country[]>('https://restcountries.com/v3.1/region/americas');
   }
 
   getOceaniaCountries(): Observable<Country[]>{
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Oceania');
+    return this.http.get<Country[]>('https://restcountries.com/v2/region/Oceania');
   }
 
   getAfricanCountries(): Observable<Country[]>{
-    return this.http.get<Country[]>('https://restcountries.eu/rest/v2/region/Africa');
+    return this.http.get<Country[]>('https://restcountries.com/v2/region/africa');
   }
 
   getCountryInfo(country: string){
