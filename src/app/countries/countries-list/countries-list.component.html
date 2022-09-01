@@ -2,8 +2,8 @@
     <div *ngFor="let country of countries" class="card" style="width: 25rem;">
         <img src="{{country.flags.png}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{country.capital}}</h5>
-          <p class="card-text">{{country.name}}</p>
+          <h5 class="card-title">{{country.name.common}}</h5>
+          <p class="card-text">{{country.capital}}</p>
           <button class="btn btn-lg btn-outline-primary" (click)="openLg(content)">Info</button>
           <ng-template #content let-modal>
             <div class="modal-header">
@@ -20,16 +20,16 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="col-md-8">
-                  <label class="row"><strong> Name : </strong>  {{country.name.common}} </label>
-                  <label class="row"><strong> Native Name : </strong> {{country.name.nativeName.eng.official}} </label>
-                  <label class="row"><strong> Country Domain Name : </strong>{{country.tdl}} </label>
-                  <label class="row"><strong> Country Region : </strong>{{country.region}} </label>
-                  <label class="row" *ngIf=country.subregion><strong>Country Sub Region : </strong>{{country.subregion}} </label>
-                <label class="row" *ngIf=country.capital><strong>Country Capital : </strong>{{country.capital}} </label>
-                <label class="row"><strong> Country Population : </strong>{{country.population | number}} people </label>
-                <label class="row"><strong> Country Timezones : </strong>{{country.timezones}} </label>
-                <label class="row"><strong> Country Borders : </strong>{{country.borders}} </label>
-                <label class="row"><strong> Country Languages : </strong></label>
+                  <label class="row"><strong> Name:&nbsp; </strong>  {{country.name.common}} </label>
+                  <label class="row"><strong> Native Name:&nbsp; </strong> To be fixed!  </label> <!-- {{country.name.nativeName.eng.official}} -->
+                  <label class="row"><strong> Country Domain Name:&nbsp; </strong>{{country.tdl}} </label>
+                  <label class="row"><strong> Country Region:&nbsp; </strong>{{country.region}} </label>
+                  <label class="row" *ngIf=country.subregion><strong>Country Sub Region:&nbsp; </strong>{{country.subregion}} </label>
+                <label class="row" *ngIf=country.capital><strong>Country Capital:&nbsp; </strong>{{country.capital}} </label>
+                <label class="row"><strong> Country Population:&nbsp; </strong>{{country.population | number}} people </label>
+                <label class="row"><strong> Country Timezones:&nbsp; </strong>{{country.timezones}} </label>
+                <label class="row"><strong> Country Borders:&nbsp; </strong>{{country.borders}} </label>
+                <label class="row"><strong> Country Languages:&nbsp; </strong>To be fixed!</label>
                 <!-- <label style="white-space:pre;" *ngFor="let language of country.languages">{{ ' ' + language.name + ' '}}</label> -->
                 </div>
               </div>
