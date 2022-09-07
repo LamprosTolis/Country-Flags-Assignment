@@ -29,9 +29,9 @@ export class EuropeanCountriesComponent implements OnInit {
 
         let natName = country.name.nativeName.eng?.["official"]?.toString()??""
         if(natName === "")
-        Object.values(country.name.nativeName).forEach(l => {
-          if(l)
-          natName = Object.values(l)[0]
+        Object.values(country.name.nativeName).forEach(n => {
+          if(n)
+          natName = Object.values(n)[0]
         })
 
         let borders = ""
