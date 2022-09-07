@@ -2,12 +2,16 @@
     width: 100%;
     height: 10vw;
     object-fit: cover;
+    border-radius: 10px !important; 
+    border-color: black;
 }
 .btn-primary{
     padding: 10px 12px;
     margin: 0 5px;  
     border-radius: 15px;
+    color: #004891;
 }
+
 .HeaderDiv{
     align-items: center;
 }

@@ -1,5 +1,4 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Country } from './../countries/country';
 import { CountriesService } from '../countries.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 
@@ -20,12 +19,16 @@ export class EuropeanCountriesComponent implements OnInit {
     this.countryService.getEuropeanCountries().subscribe((data) => {
 
       const countryDAOList = []
+
       data.forEach(country => {
+
         let language = ""
         Object.values(country.languages).forEach(l => {
           language += l + ", "
         })
         language = language.substring(0,language.length - 2)
+
+
 
         let natName = country.name.nativeName.eng?.["official"]?.toString()??""
         if(natName === "")
@@ -34,23 +37,49 @@ export class EuropeanCountriesComponent implements OnInit {
           natName = Object.values(n)[0]
         })
 
+
         let borders = ""
         if(country.borders!== undefined)
-        borders = country.borders.toString()
+        for(let b in country.borders)
+        {
+          borders += country.borders[b] + ", "
+        }
+        if(borders!=="")
+        borders = borders.substring(0,borders.length - 2)
+
+
+        let timezones = ""
+        if(country.timezones!== undefined)
+        for(let t in country.timezones)
+        {
+          timezones += country.timezones[t] + " , "
+        }
+        timezones = timezones.substring(0,timezones.length - 2)
+
+        // let timezones = ""
+        // data.forEach(country => {
+
+        //   Object.values(country.timezones).forEach(t => {
+        //     timezones += t + ", "
+        //   })
+        //   timezones = timezones.substring(timezones.length -2)
+
+        // })
+
 
         countryDAOList.push(new CountryDAO(
-          // country.topLevelDomain
+
           country.tld?.[0]??"N/A",
           country.region,
           country.subregion,
           country.population,
-          country.timezones.toString(),
-          borders,
+          timezones,
+          borders??"N/A",
           natName,
           language,
           country.name.common,
           country.flags.png,
-          country.capital.toString()
+          country.capital?.toString()??"N/A"
         ))
       })
       this.europeancountries = countryDAOList;
@@ -79,10 +108,4 @@ export class CountryDAO{
   ) {
 
   }
-
-
- 
-
-
-
 }

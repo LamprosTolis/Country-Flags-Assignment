@@ -1,5 +1,5 @@
 <div class="row">
-  <div *ngFor="let country of europeancountries" class="card" style="width: 25rem;">
+  <div *ngFor="let country of europeancountries" class="card" style="width: 25rem;" >
       <img src="{{country.flag}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{country.name}}</h5>
@@ -28,14 +28,14 @@
               <label class="row" *ngIf=country.capital><strong>Country Capital :&nbsp; </strong>{{country.capital}} </label>
               <label class="row"><strong> Country Population :&nbsp; </strong>{{country.population | number}} people </label>
               <label class="row"><strong> Country Timezones :&nbsp; </strong>{{country.timezones}} </label>
-              <label class="row" *ngIf=country.borders><strong> Country Borders &nbsp;:&nbsp; </strong>{{country.borders}} </label>
+              <label class="row"><strong> Country Borders &nbsp;</strong>{{country.borders}} </label>
               <label class="row"><strong> Country Languages :&nbsp; </strong> {{country.languages}}</label>
               </div>
             </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Close click')">Close</button>
+            <button type="button" class="btn btn-outline-primary" (click)="modal.close('Close click')">Close</button>
           </div>
         </ng-template>
       </div>
